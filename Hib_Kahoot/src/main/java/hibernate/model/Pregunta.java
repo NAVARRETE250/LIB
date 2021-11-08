@@ -28,19 +28,17 @@ public class Pregunta {
     @JoinColumn(name = "id_kahoot")
     private Kahoot id_kahoot;
 	
-	@OneToMany(mappedBy = "pregunta", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "id_pregunta", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Respuesta> respuestas;
 
 	public Pregunta() {
 		super();
 	}
 
-	public Pregunta(int id_pregunta, String enunciado, Kahoot id_kahoot, List<Respuesta> respuestas) {
+	public Pregunta(String enunciado, Kahoot id_kahoot) {
 		super();
-		this.id_pregunta = id_pregunta;
 		this.enunciado = enunciado;
 		this.id_kahoot = id_kahoot;
-		this.respuestas = respuestas;
 	}
 
 	public int getId_pregunta() {

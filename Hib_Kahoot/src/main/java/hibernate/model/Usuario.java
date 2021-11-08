@@ -26,16 +26,15 @@ public class Usuario {
 	@Column(name = "contraseña")
 	private String contraseña;
 	
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "id_usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Kahoot> kahoots;
 
 	public Usuario() {
 		super();
 	}
 
-	public Usuario(int id_usuario, String nombre, String contraseña) {
+	public Usuario(String nombre, String contraseña) {
 		super();
-		this.id_usuario = id_usuario;
 		this.nombre = nombre;
 		this.contraseña = contraseña;
 	}

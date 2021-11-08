@@ -37,10 +37,8 @@ public class Concursante {
 		super();
 	}
 
-	public Concursante(int id_concursante, Set<Concurso> concursos, String nickname, int puntuacion_total) {
+	public Concursante(String nickname, int puntuacion_total) {
 		super();
-		this.id_concursante = id_concursante;
-		this.concursos = concursos;
 		this.nickname = nickname;
 		this.puntuacion_total = puntuacion_total;
 	}

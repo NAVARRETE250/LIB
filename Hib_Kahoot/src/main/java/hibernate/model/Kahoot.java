@@ -27,26 +27,24 @@ public class Kahoot {
 	@Column(name = "categoria")
 	private String categoria;
 	
-    @OneToMany(mappedBy = "kahoot", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "id_kahoot", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Pregunta> preguntas;
     
     @ManyToOne()
     @JoinColumn(name = "id_usuario")
     private Usuario id_usuario;
     
-    @OneToMany(mappedBy = "kahoot", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "id_kahoot", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Concurso> concursos;
 
 	public Kahoot() {
 		super();
 	}
 
-	public Kahoot(int id_kahoot, String titulo, String categoria, List<Pregunta> preguntas, Usuario id_usuario) {
+	public Kahoot(String titulo, String categoria, Usuario id_usuario) {
 		super();
-		this.id_kahoot = id_kahoot;
 		this.titulo = titulo;
 		this.categoria = categoria;
-		this.preguntas = preguntas;
 		this.id_usuario = id_usuario;
 	}
 

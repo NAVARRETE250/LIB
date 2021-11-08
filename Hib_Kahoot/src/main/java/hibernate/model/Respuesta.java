@@ -31,9 +31,8 @@ public class Respuesta {
 		super();
 	}
 
-	public Respuesta(int id_respuesta, String solucion, Pregunta id_pregunta, boolean correcto) {
+	public Respuesta(String solucion, Pregunta id_pregunta, boolean correcto) {
 		super();
-		this.id_respuesta = id_respuesta;
 		this.solucion = solucion;
 		this.id_pregunta = id_pregunta;
 		this.correcto = correcto;

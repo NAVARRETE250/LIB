@@ -27,7 +27,7 @@ public class Concurso {
 	@JoinColumn(name = "id_kahoot")
 	private Kahoot id_kahoot;
 	
-	@ManyToMany(mappedBy = "concurso")
+	@ManyToMany(mappedBy = "concursos")
     private Set<Concursante> concursantes;
 	
 	@Column(name = "ganador")
@@ -43,10 +43,9 @@ public class Concurso {
 		super();
 	}
 
-	public Concurso(int id_concurso, Kahoot id_kahoot, Set<Concursante> concursantes, int ganador, int segundo,
+	public Concurso(Kahoot id_kahoot, Set<Concursante> concursantes, int ganador, int segundo,
 			int tercero) {
 		super();
-		this.id_concurso = id_concurso;
 		this.id_kahoot = id_kahoot;
 		this.concursantes = concursantes;
 		this.ganador = ganador;
