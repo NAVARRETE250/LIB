@@ -1,4 +1,4 @@
-package main.java.hibernate.dao;
+package hibernate.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,9 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import main.java.hibernate.model.Concursante;
-import main.java.hibernate.model.Usuario;
-import main.java.hibernate.util.HibernateUtil;
+import hibernate.model.Usuario;
+import hibernate.model.Concursante;
+import hibernate.util.HibernateUtil;
 
 public class ConcursanteDao {
 	
@@ -99,7 +99,7 @@ public class ConcursanteDao {
 			}
 		}
 	}
-	
+
 	public boolean concursanteExists(String nombre) {
 		Transaction transaction = null;
 		Concursante concursante = null;
@@ -120,5 +120,6 @@ public class ConcursanteDao {
 			return true;
 		}
 	}
+
 
 }

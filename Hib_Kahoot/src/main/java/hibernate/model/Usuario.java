@@ -1,4 +1,6 @@
-package main.java.hibernate.model;
+
+package hibernate.model;
+
 
 import java.util.List;
 
@@ -33,6 +35,7 @@ public class Usuario {
 		super();
 	}
 
+
 	public Usuario(String nombre, String contrasenia) {
 		super();
 		this.nombre = nombre;
@@ -57,10 +60,6 @@ public class Usuario {
 
 	public String getContrasenia() {
 		return contrasenia;
-	}
-
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
 	}
 	
 	

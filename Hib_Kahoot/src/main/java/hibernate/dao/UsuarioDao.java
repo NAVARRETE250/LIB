@@ -1,14 +1,17 @@
-package main.java.hibernate.dao;
+
+package hibernate.dao;
+
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import main.java.hibernate.model.Usuario;
-import main.java.hibernate.util.HibernateUtil;
+import hibernate.model.Usuario;
+import hibernate.util.HibernateUtil;
 
 public class UsuarioDao {
 	public UsuarioDao() {}
@@ -63,6 +66,7 @@ public class UsuarioDao {
 		return usuario;
 	}
 	
+
 	public Usuario getUsuarioByName(String nombre) {
 		Transaction transaction = null;
 		Usuario usuario = null;
@@ -79,7 +83,6 @@ public class UsuarioDao {
 		
 		return usuario;
 	}
-	
 	@SuppressWarnings("unchecked")
 	public List<Usuario> getAllUsuarios() {
 		Transaction transaction = null;

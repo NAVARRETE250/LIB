@@ -1,4 +1,6 @@
-package main.java.hibernate.model;
+
+package hibernate.model;
+
 
 import java.util.Set;
 
@@ -12,6 +14,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
+
+
 
 @Entity(name = "concursante")
 @Table(name = "concursante")

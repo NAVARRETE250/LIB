@@ -1,4 +1,6 @@
-package main.java.hibernate.dao;
+
+package hibernate.dao;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,9 +9,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.internal.build.AllowSysOut;
 
-import main.java.hibernate.model.Kahoot;
-import main.java.hibernate.model.Pregunta;
-import main.java.hibernate.util.HibernateUtil;
+
+import hibernate.model.Pregunta;
+import hibernate.model.Kahoot;
+import hibernate.util.HibernateUtil;
+
 
 public class KahootDao {
 	public KahootDao() {}
@@ -99,6 +103,7 @@ public class KahootDao {
 				}
 			}
 		}
+  
 		public List<Kahoot> getKahootsByCategoria(String categoria){
 			Transaction transaction = null;
 			List<Kahoot> kahoots = new ArrayList<Kahoot>();
@@ -154,6 +159,5 @@ public class KahootDao {
 			
 			return preguntas;
 		}
-		
 
 }

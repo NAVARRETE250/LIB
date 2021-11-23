@@ -1,4 +1,6 @@
-package main.java.hibernate.model;
+
+package hibernate.model;
+
 
 import java.util.List;
 
@@ -12,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity(name = "pregunta")
 @Table(name = "pregunta")
@@ -40,11 +43,12 @@ public class Pregunta {
 		this.enunciado = enunciado;
 		this.id_kahoot = id_kahoot;
 	}
-	
+
 	public Pregunta(String enunciado) {
 		super();
 		this.enunciado = enunciado;
 	}
+
 
 	public int getId_pregunta() {
 		return id_pregunta;
