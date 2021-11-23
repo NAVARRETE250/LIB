@@ -1,8 +1,12 @@
+
 package hibernate.dao;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -62,6 +66,23 @@ public class UsuarioDao {
 		return usuario;
 	}
 	
+
+	public Usuario getUsuarioByName(String nombre) {
+		Transaction transaction = null;
+		Usuario usuario = null;
+		
+		try(Session session = HibernateUtil.getSessionFactory().openSession()){
+			transaction = session.beginTransaction();
+			usuario = (Usuario) session.createQuery("from usuario u where u.nombre='"+nombre+"'").uniqueResult();
+			transaction.commit();
+		}catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();	
+			}
+		}
+		
+		return usuario;
+	}
 	@SuppressWarnings("unchecked")
 	public List<Usuario> getAllUsuarios() {
 		Transaction transaction = null;

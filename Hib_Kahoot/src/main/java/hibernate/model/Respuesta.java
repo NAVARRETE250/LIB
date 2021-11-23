@@ -1,4 +1,6 @@
+
 package hibernate.model;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
+
+@Entity(name = "respuesta")
 @Table(name = "respuesta")
 public class Respuesta {
 	@Id
@@ -37,6 +40,13 @@ public class Respuesta {
 		this.id_pregunta = id_pregunta;
 		this.correcto = correcto;
 	}
+
+	public Respuesta(String solucion, boolean correcto) {
+		super();
+		this.solucion = solucion;
+		this.correcto = correcto;
+	}
+
 
 	public int getId_respuesta() {
 		return id_respuesta;

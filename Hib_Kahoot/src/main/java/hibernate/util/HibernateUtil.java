@@ -1,4 +1,6 @@
+
 package hibernate.util;
+
 
 import java.util.Properties;
 
@@ -14,6 +16,8 @@ import hibernate.model.Concursante;
 import hibernate.model.Concurso;
 import hibernate.model.Pregunta;
 import hibernate.model.Respuesta;
+import hibernate.model.RespuestaConcurso;
+
 
 
 public class HibernateUtil {
@@ -31,8 +35,11 @@ public class HibernateUtil {
 				settings.put(Environment.URL, "jdbc:mysql://localhost:3306/Kahoot");
 				// Nombre user
 				settings.put(Environment.USER, "root");
-				// Nombre contraseña
+
+				// Nombre contrasenia
+
 				settings.put(Environment.PASS, "Root123_");
+
 				settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
 				settings.put(Environment.SHOW_SQL, "true");
@@ -50,6 +57,8 @@ public class HibernateUtil {
 				configuration.addAnnotatedClass(Concurso.class);
 				configuration.addAnnotatedClass(Pregunta.class);
 				configuration.addAnnotatedClass(Respuesta.class);
+				configuration.addAnnotatedClass(RespuestaConcurso.class);
+
 
 				ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 						.applySettings(configuration.getProperties()).build();

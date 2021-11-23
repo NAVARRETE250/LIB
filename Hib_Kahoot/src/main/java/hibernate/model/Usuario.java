@@ -1,4 +1,6 @@
+
 package hibernate.model;
+
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
-@Entity
+@Entity(name = "usuario")
 @Table(name = "usuario")
 public class Usuario {
 	@Id
@@ -23,8 +25,8 @@ public class Usuario {
 	@Column(name = "nombre")
 	private String nombre;
 	
-	@Column(name = "contraseña")
-	private String contraseña;
+	@Column(name = "contrasenia")
+	private String contrasenia;
 	
 	@OneToMany(mappedBy = "id_usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Kahoot> kahoots;
@@ -33,10 +35,11 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(String nombre, String contraseña) {
+
+	public Usuario(String nombre, String contrasenia) {
 		super();
 		this.nombre = nombre;
-		this.contraseña = contraseña;
+		this.contrasenia = contrasenia;
 	}
 
 	public int getId_usuario() {
@@ -55,12 +58,8 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public String getContraseña() {
-		return contraseña;
-	}
-
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public String getContrasenia() {
+		return contrasenia;
 	}
 	
 	

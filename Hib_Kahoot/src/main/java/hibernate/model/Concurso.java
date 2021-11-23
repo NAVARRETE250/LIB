@@ -1,4 +1,6 @@
+
 package hibernate.model;
+
 
 import java.util.List;
 import java.util.Set;
@@ -15,7 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
+
+@Entity(name = "concurso")
 @Table(name = "concurso")
 public class Concurso {
 	@Id
